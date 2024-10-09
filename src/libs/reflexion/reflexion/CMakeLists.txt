@@ -19,6 +19,8 @@ add_custom_target(${TARGET_NAME}_IDE
 
 add_library(ad::${TARGET_NAME} ALIAS ${TARGET_NAME})
 
+cmc_target_current_include_directory(${TARGET_NAME})
+
 if(MSVC)
     target_compile_options(${TARGET_NAME} INTERFACE "/Zc:__cplusplus")
 endif()
